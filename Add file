@@ -1,0 +1,13 @@
+const multer = require("multer");
+const upload = multer({ dest: "/tmp/" });
+
+module.exports = (req, res) => {
+  if (req.method === "POST") {
+    upload.single("file")(req, res, function (err) {
+      if (err) return res.status(500).send("Upload failed: " + err.message);
+      res.status(200).send(`File uploaded successfully: ${req.file.originalname}`);
+    });
+  } else {
+    res.status(200).send("Use POST to upload a file.");
+  }
+};
