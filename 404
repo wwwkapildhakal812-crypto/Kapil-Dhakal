@@ -1,0 +1,7 @@
+C:\Users\YourName\Projects\my-node-app
+│
+├─ api
+│   └─ upload.js
+├─ public
+│   └─ index.html
+└─ package.json
